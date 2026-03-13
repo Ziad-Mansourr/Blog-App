@@ -122,3 +122,5 @@ mysql_db/
 
 # vscode
 .vscode/
+
+db.md

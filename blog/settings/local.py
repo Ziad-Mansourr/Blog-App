@@ -1,5 +1,7 @@
+from decouple import config
+
 from .base import *
-from .base import config
+
 DEBUG = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 SECRET_KEY = config(

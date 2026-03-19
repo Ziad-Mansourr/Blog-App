@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 from decouple import config
@@ -49,7 +50,9 @@ THIRD_PARTY_APPS = [
     "silk",
 ]
 
-LOCAL_APPS = []
+LOCAL_APPS = [
+    "blog.posts",
+]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
@@ -143,7 +146,7 @@ USE_TZ = True
 STATIC_URL = "static/"
 STATIC_DIRECTORY = "/static/"
 MEDIA_DIRECTORY = "/media/"
-
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 """REST Framework Settings"""
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [

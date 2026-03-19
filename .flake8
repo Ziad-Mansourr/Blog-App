@@ -10,4 +10,4 @@ exclude =
     build,
     dist,
 per-file-ignores =
-    blog/settings/*.py:F403,F405,F401
+    blog/*.py:F403,F405,F401

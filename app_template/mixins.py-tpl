@@ -1,2 +1,1 @@
-from . import validations
 from django_lifecycle import (LifecycleModelMixin,BEFORE_SAVE,hook)

@@ -1,2 +1,2 @@
 from django.db import models
-from . import mixins,managers,validations
+from . import mixins,managers

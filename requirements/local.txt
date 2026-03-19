@@ -1,6 +1,7 @@
 -r base.txt
-django-silk==5.0.3
+django-silk==5.5.0
 pre-commit==2.20.0
 black==22.8.0
-flake8==5.0.4
+flake8==7.1.1
+autopep8==2.3.2
 isort==8.0.1

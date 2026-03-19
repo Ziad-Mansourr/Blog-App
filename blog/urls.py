@@ -15,15 +15,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path, re_path
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 from rest_framework import permissions
 
+from blog.settings.base import MEDIA_DIRECTORY, MEDIA_ROOT
+
 main_patterns = [
     path("admin/", admin.site.urls),
-    # path("api/", include(".urls"))
+    path("api/", include("blog.posts.urls")),
 ]
 
 schema_view = get_schema_view(
@@ -51,3 +55,5 @@ urlpatterns += [
     path("redoc/", schema_view.with_ui("redoc", cache_timeout=0), name="schema-redoc"),
     path("silk/", include("silk.urls", namespace="silk")),
 ]
+if settings.DEBUG:
+    urlpatterns += static(MEDIA_DIRECTORY, document_root=MEDIA_ROOT)

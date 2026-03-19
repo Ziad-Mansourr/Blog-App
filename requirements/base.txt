@@ -7,3 +7,5 @@ mysqlclient==2.2.4
 django-unfold==0.40.0
 drf-yasg==1.21.15
 django-modeltranslation==0.18.4
+django-lifecycle==1.2.7
+Pillow==12.1.1
